@@ -1,17 +1,23 @@
 const router = require('express').Router();
+const {
+    getAllPost,
+    getSinglePost,
+    createNewPost,
+    updatePost,
+    deletePost,
+} = require('./postController');
+// example.com/posts GET
+router.get('/', getAllPost);
 
-router.get('/', (req, res) => {
-    res.send('<h1>Render all post</h1>');
-});
-router.post('/', (req, res) => {
-    res.send('<h1>Create new post</h1>');
-});
+// example.com/post/:postId  GET
+router.get('/:postId', getSinglePost);
 
-router.put('/', (req, res) => {
-    res.send('<h1>Update your existing post');
-});
+// example.com/posts POST
+router.post('/', createNewPost);
 
-router.delete('/', (req, res) => {
-    res.send('<h2>Delete your existing post</h2>');
-});
+// example.com/posts/:postId PUT
+router.put('/:postId', updatePost);
+
+// example.com/posts/:postId DELETE
+router.delete('/:postId', deletePost);
 module.exports = router;

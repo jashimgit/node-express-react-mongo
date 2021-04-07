@@ -1,4 +1,6 @@
 {
+  "editor.fontFamily": "'operator mono lig light'",
+  "editor.fontSize": 12,
   // config related to code formatting
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
